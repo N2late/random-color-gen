@@ -7,9 +7,6 @@ const luminosity = process.argv[3];
 let colorHex = randomColor({ luminosity: luminosity, hue: hue });
 let color = chalk.hex(colorHex);
 
-// if (process.argv[2] && process.argv[2].match(/\d{2}\x\d{,2}/)){
-// missing the logic for this one
-
 function printColorfulHashtags(hexColor, colorChalk, x = 31) {
   const hashtags = [];
 
