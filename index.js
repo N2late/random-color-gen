@@ -11,22 +11,22 @@ let color = chalk.hex(colorHex);
 // missing the logic for this one
 
 function printColorfulHashtags(hexColor, colorChalk, x = 31) {
-  const hashtags = '#'.repeat(31);
+  const hashtags = [];
 
-  for (let i = 0; i < 3; i++) {
-    console.log(colorChalk(hashtags));
+  for (let i = 0; i < x; i++) {
+    hashtags.push('#');
   }
 
-  console.log(color('#'.repeat(5) + ' '.repeat(21) + '#'.repeat(5)));
-  console.log(
-    color(
-      '#'.repeat(5) + ' '.repeat(7) + colorHex + ' '.repeat(7) + '#'.repeat(5),
-    ),
-  );
-  console.log(color('#'.repeat(5) + ' '.repeat(21) + '#'.repeat(5)));
+  for (let i = 0; i < 3; i++) {
+    console.log(colorChalk(hashtags.join('')));
+  }
+
+  console.log(color('#####                     #####'));
+  console.log(color(`#####      ${hexColor}        #####`));
+  console.log(color('#####                     #####'));
 
   for (let i = 0; i < 3; i++) {
-    console.log(colorChalk(hashtags));
+    console.log(colorChalk(hashtags.join('')));
   }
 }
 
